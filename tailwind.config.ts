@@ -26,6 +26,9 @@ const config: Config = {
             light: '#EFF3F4',
           },
         },
+        button: {
+          background: '#1B90EE',
+        },
       },
       backgroundImage: {
         'soft-blue-gradient': 'linear-gradient(to right, #e6f2ff, #b3d9ff)',
