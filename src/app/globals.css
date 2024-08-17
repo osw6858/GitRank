@@ -2,6 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #4a90e2, 0 0 10px #4a90e2, 0 0 15px #4a90e2, 0 0 20px #4a90e2;
+    }
+    50% {
+        box-shadow: 0 0 10px #4a90e2, 0 0 20px #4a90e2, 0 0 30px #4a90e2, 0 0 40px #4a90e2;
+    }
+    100% {
+        box-shadow: 0 0 5px #4a90e2, 0 0 10px #4a90e2, 0 0 15px #4a90e2, 0 0 20px #4a90e2;
+    }
+}
+
+.glowing-blue-bg {
+    position: relative;
+}
+
+.glowing-blue-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(74, 144, 226, 0.1);
+    filter: blur(20px);
+    z-index: -1;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-400 {
+    animation-delay: 400ms;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
