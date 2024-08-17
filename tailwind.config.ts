@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        78: '18.5rem',
+      },
       colors: {
         dark: {
           background: '#000000',

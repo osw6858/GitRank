@@ -1,5 +1,5 @@
-import OauthButton from '@/components/OauthButton';
 import BasicButton from '@/components/BasicButton';
+import OauthButton from '@/components/OauthButton';
 
 export default function Home() {
   return (
@@ -28,10 +28,10 @@ export default function Home() {
             <p className={'text-3xl font-bold mb-5'}>지금 가입하세요.</p>
           </div>
           <div className={'flex flex-col'}>
-            <div className={'my-2 w-2/4'}>
+            <div className={'my-2 w-78'}>
               <OauthButton />
             </div>
-            <div className={'flex items-center w-2/4'}>
+            <div className={'flex items-center w-78'}>
               <div
                 className={
                   'flex-1 border-t border-solid border-light-gray-dark'
@@ -45,12 +45,12 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className={'w-2/4 mb-5'}>
+          <div className={'w-78 mb-5'}>
             <BasicButton classNames={'bg-button-background text-dark-text'}>
               계정 만들기
             </BasicButton>
           </div>
-          <div className={'w-2/4 mt-16'}>
+          <div className={'w-78 mt-16'}>
             <p className={'font-bold text-lg mb-3'}>이미 계정이 있으신가요?</p>
             <BasicButton
               classNames={
