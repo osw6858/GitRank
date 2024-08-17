@@ -53,7 +53,7 @@ export default function Home() {
           </div>
           <div className={'md:w-78 mb-5'}>
             <BasicButton classNames={'bg-button-green text-white'}>
-              <p className={'pt-1'}>계정 만들기</p>
+              계정 만들기
             </BasicButton>
           </div>
           <div className={'md:w-78 mt-16'}>

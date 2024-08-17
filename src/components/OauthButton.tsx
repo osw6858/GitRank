@@ -9,7 +9,7 @@ export default function OauthButton() {
         }
       >
         <div className={'flex items-center justify-center'}>
-          <span className={'font-semibold pr-2 pt-1'}>깃허브로 시작하기</span>
+          <span className={'font-semibold pr-2'}>깃허브로 시작하기</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
