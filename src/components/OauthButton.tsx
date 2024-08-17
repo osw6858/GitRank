@@ -12,8 +12,8 @@ export default function OauthButton() {
           <span className={'font-semibold pr-2 pt-1'}>깃허브로 시작하기</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
+            width="20"
+            height="20"
             fill="currentColor"
             className="bi bi-github"
             viewBox="0 0 16 16"

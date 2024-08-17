@@ -1,9 +1,8 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import {ReactNode} from 'react';
-
-import {ThemeProvider} from '@/provider/ThemeProvider';
 import ThemeSwitcher from '@/components/DarkModeButton';
+import {ThemeProvider} from '@/provider/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Git Rank',

@@ -3,14 +3,16 @@ import OauthButton from '@/components/OauthButton';
 
 export default function Home() {
   return (
-    <div className={'flex h-screen relative'}>
-      <div className={'flex flex-col items-center justify-center flex-1 p-10'}>
+    <div className={'flex flex-col h-screen relative md:flex-row'}>
+      <div
+        className={'flex flex-col items-center justify-center flex-1 md:p-10'}
+      >
         <div className={'relative'}>
           <div
             className={`glowing-green-bg w-full h-[30px] absolute top-14`}
           ></div>
           <h1
-            className={`text-8xl font-bold bg-clip-text text-light-text dark:text-dark-text`}
+            className={`text-6xl font-bold bg-clip-text text-light-text dark:text-dark-text md:text-8xl`}
           >
             Git Rank
           </h1>
@@ -21,17 +23,21 @@ export default function Home() {
           {/*</h2>*/}
         </div>
       </div>
-      <div className={'flex flex-col justify-center flex-1 p-10'}>
-        <div className={'flex flex-col p-8 w-2/3'}>
-          <h3 className={'text-6xl font-bold my-10'}>개발의 현재를 보다</h3>
+      <div className={'flex flex-col justify-center flex-1 p-5 md:p-10'}>
+        <div className={'flex flex-col md:w-2/3 md:p-8'}>
+          <h3 className={'text-4xl font-bold my-10 md:text-6xl'}>
+            개발의 현재를 보다
+          </h3>
           <div className={'flex flex-col'}>
-            <p className={'text-3xl font-bold mb-5'}>지금 가입하세요.</p>
+            <p className={'text-xl font-bold mb-5 md:text-3xl'}>
+              지금 가입하세요.
+            </p>
           </div>
           <div className={'flex flex-col'}>
-            <div className={'my-2 w-78'}>
+            <div className={'my-2 md:w-78'}>
               <OauthButton />
             </div>
-            <div className={'flex items-center w-78'}>
+            <div className={'flex items-center md:w-78'}>
               <div
                 className={
                   'flex-1 border-t border-solid border-light-gray-dark'
@@ -45,12 +51,12 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className={'w-78 mb-5'}>
+          <div className={'md:w-78 mb-5'}>
             <BasicButton classNames={'bg-button-green text-white'}>
-              계정 만들기
+              <p className={'pt-1'}>계정 만들기</p>
             </BasicButton>
           </div>
-          <div className={'w-78 mt-16'}>
+          <div className={'md:w-78 mt-16'}>
             <p className={'font-bold text-lg mb-3'}>이미 계정이 있으신가요?</p>
             <BasicButton
               classNames={
