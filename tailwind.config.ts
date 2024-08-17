@@ -14,8 +14,9 @@ const config: Config = {
       },
       colors: {
         dark: {
-          background: '#000000',
-          text: '#FFFFFF',
+          background: '#04080D',
+          text: '#E2EAF1',
+          subText: '#828B96',
           gray: {
             dark: '#2F3336',
             light: '#71767B',
@@ -23,14 +24,16 @@ const config: Config = {
         },
         light: {
           background: '#FFFFFF',
-          text: '#0F1419',
+          text: '#24292F',
           gray: {
             dark: '#536471',
             light: '#EFF3F4',
           },
         },
         button: {
-          background: '#1B90EE',
+          blue: '#1B90EE',
+          green: '#298E46',
+          lightGreen: '#2ECC71',
         },
       },
       backgroundImage: {

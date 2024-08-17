@@ -3,6 +3,7 @@ import './globals.css';
 import {ReactNode} from 'react';
 
 import {ThemeProvider} from '@/provider/ThemeProvider';
+import ThemeSwitcher from '@/components/DarkModeButton';
 
 export const metadata: Metadata = {
   title: 'Git Rank',
@@ -15,11 +16,13 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="kr" suppressHydrationWarning>
       <body
         className={`bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children} <ThemeSwitcher />
+        </ThemeProvider>
       </body>
     </html>
   );

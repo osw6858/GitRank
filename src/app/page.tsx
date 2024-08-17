@@ -7,7 +7,7 @@ export default function Home() {
       <div className={'flex flex-col items-center justify-center flex-1 p-10'}>
         <div className={'relative'}>
           <div
-            className={`glowing-blue-bg w-full h-[30px] absolute top-14`}
+            className={`glowing-green-bg w-full h-[30px] absolute top-14`}
           ></div>
           <h1
             className={`text-8xl font-bold bg-clip-text text-light-text dark:text-dark-text`}
@@ -46,7 +46,7 @@ export default function Home() {
             </div>
           </div>
           <div className={'w-78 mb-5'}>
-            <BasicButton classNames={'bg-button-background text-dark-text'}>
+            <BasicButton classNames={'bg-button-green text-white'}>
               계정 만들기
             </BasicButton>
           </div>
@@ -57,7 +57,11 @@ export default function Home() {
                 'bg-transparent border border-solid border-light-gray-dark dark:border-dark-gray-light p-2'
               }
             >
-              <span className={'text-button-background font-semibold'}>
+              <span
+                className={
+                  'text-button-green dark:text-button-lightGreen font-semibold'
+                }
+              >
                 로그인
               </span>
             </BasicButton>
