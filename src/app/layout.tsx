@@ -4,6 +4,7 @@ import {Noto_Sans_KR} from 'next/font/google';
 import {ReactNode} from 'react';
 
 import ThemeSwitcher from '@/components/DarkModeButton';
+import AuthProvider from '@/provider/AuthProvider';
 import {ThemeProvider} from '@/provider/ThemeProvider';
 
 export const metadata: Metadata = {
@@ -25,9 +26,11 @@ export default function RootLayout({
       <body
         className={`${notoSansKR.className} bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text`}
       >
-        <ThemeProvider>
-          {children} <ThemeSwitcher />
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider>
+            {children} <ThemeSwitcher />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

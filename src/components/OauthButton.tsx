@@ -1,9 +1,25 @@
 'use client';
 
+import {signIn, signOut, useSession} from 'next-auth/react';
+
 export default function OauthButton() {
+  const {data: session} = useSession();
+
+  console.log('Session:', session);
+
+  if (session) {
+    return (
+      <>
+        <p>Welcome, {session.user && session.user.name}!</p>
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    );
+  }
+
   return (
     <>
       <button
+        onClick={() => signIn('github')}
         className={
           'bg-dark-background text-dark-text dark:bg-light-background dark:text-light-text w-full p-3 rounded-full'
         }
