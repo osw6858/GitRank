@@ -44,6 +44,9 @@ const config: Config = {
       },
     },
   },
+  layers: {
+    components: ['components'],
+  },
   plugins: [],
 };
 export default config;

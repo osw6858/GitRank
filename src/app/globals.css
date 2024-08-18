@@ -55,6 +55,18 @@
     animation-delay: 400ms;
 }
 
+@layer components {
+    .tooltip {
+        @apply invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute top-1/2 left-full transform -translate-y-1/2 translate-x-2 p-2 bg-gray-800 text-white text-xs rounded shadow-lg whitespace-nowrap;
+        @apply hidden md:block;
+    }
+
+    .tooltip::before {
+        content: '';
+        @apply absolute top-1/2 right-full -translate-y-1/2 border-[6px] border-solid border-transparent border-r-gray-800;
+    }
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

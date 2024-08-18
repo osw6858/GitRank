@@ -51,10 +51,17 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className={'md:w-78 mb-5'}>
+          <div className={'md:w-78 mb-5 group relative'}>
             <BasicButton classNames={'bg-button-green text-white'}>
-              계정 만들기
+              비연동 회원가입
             </BasicButton>
+            <div className="tooltip">
+              깃허브 연동을 하지 않고 회원가입만 진행합니다.
+              <br />
+              단순 조회만 가능하며 이후 깃허브를 연동하여
+              <br />
+              추가 기능을 이용하실 수 있습니다.
+            </div>
           </div>
           <div className={'md:w-78 mt-16'}>
             <p className={'font-bold text-lg mb-3'}>이미 계정이 있으신가요?</p>

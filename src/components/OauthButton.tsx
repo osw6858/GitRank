@@ -17,7 +17,7 @@ export default function OauthButton() {
   }
 
   return (
-    <>
+    <div className={'group relative'}>
       <button
         onClick={() => signIn('github')}
         className={
@@ -25,7 +25,7 @@ export default function OauthButton() {
         }
       >
         <div className={'flex items-center justify-center'}>
-          <span className={'font-semibold pr-2'}>깃허브로 시작하기</span>
+          <span className={'font-semibold pr-2'}>깃허브 연동 로그인</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -38,6 +38,11 @@ export default function OauthButton() {
           </svg>
         </div>
       </button>
-    </>
+      <div className="tooltip">
+        깃허브를 연동하여 로그인을 진행합니다.
+        <br />
+        모든 서비스를 이용하실 수 있습니다.
+      </div>
+    </div>
   );
 }

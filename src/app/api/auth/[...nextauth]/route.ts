@@ -8,7 +8,6 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_SECRET || '',
     }),
   ],
-  // 필요한 경우 여기에 추가 옵션을 설정할 수 있습니다.
 };
 
 const handler = NextAuth(authOptions);
