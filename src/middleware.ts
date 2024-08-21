@@ -1,24 +1,31 @@
 import {NextResponse} from 'next/server';
 import {withAuth} from 'next-auth/middleware';
 
-export default withAuth(function middleware(req) {
-  const path = req.nextUrl.pathname;
-  console.log('미들웨어 실행:', path, '토큰:', req.nextauth.token);
+export default withAuth(
+  function middleware(req) {
+    const {pathname} = req.nextUrl;
+    const isAuthenticated = !!req.nextauth.token;
 
-  if (req.nextauth.token && path === '/success') {
-    return NextResponse.next();
-  }
-  if (!req.nextauth.token && path === '/') {
-    return NextResponse.next();
-  }
+    if (pathname === '/' && isAuthenticated) {
+      return NextResponse.redirect(new URL('/success', req.url));
+    }
 
-  if (req.nextauth.token) {
-    return NextResponse.redirect(new URL('/success', req.url));
-  } else {
-    return NextResponse.redirect(new URL('/', req.url));
-  }
-});
+    if (pathname !== '/' && !isAuthenticated) {
+      return NextResponse.redirect(new URL('/', req.url));
+    }
+
+    return NextResponse.next();
+  },
+  {
+    callbacks: {
+      authorized: ({token, req}) => {
+        const {pathname} = req.nextUrl;
+        return pathname === '/' || !!token;
+      },
+    },
+  },
+);
 
 export const config = {
-  matcher: ['/success', '/'],
+  matcher: ['/', '/success', '/profile'],
 };
