@@ -2,8 +2,6 @@ import type {Metadata} from 'next';
 import './globals.css';
 import {Noto_Sans_KR} from 'next/font/google';
 import {ReactNode} from 'react';
-
-import ThemeSwitcher from '@/components/DarkModeButton';
 import AuthProvider from '@/provider/AuthProvider';
 import {ThemeProvider} from '@/provider/ThemeProvider';
 
@@ -28,7 +26,8 @@ export default function RootLayout({
       >
         <AuthProvider>
           <ThemeProvider>
-            {children} <ThemeSwitcher />
+            {children}
+            {/*<ThemeSwitcher />*/}
           </ThemeProvider>
         </AuthProvider>
       </body>
