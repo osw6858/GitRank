@@ -49,7 +49,7 @@ export default function Home() {
           </div>
           <div className={'md:w-78 mb-5 group relative'}>
             <Link
-              href={'/(.)auth/signup'}
+              href={'/auth/signup'}
               className={
                 'flex items-center justify-center bg-button-green text-white p-3 rounded-full w-full '
               }
