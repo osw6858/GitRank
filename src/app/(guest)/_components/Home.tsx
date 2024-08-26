@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import BasicButton from '@/components/BasicButton';
 import OauthButton from '@/components/OauthButton';
-import Link from 'next/link';
 
 export default function Home() {
   return (

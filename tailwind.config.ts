@@ -18,6 +18,7 @@ const config: Config = {
       colors: {
         dark: {
           background: '#04080D',
+          modalBg: 'rgba(91, 112, 131, 0.4)',
           text: '#E2EAF1',
           subText: '#828B96',
           gray: {
