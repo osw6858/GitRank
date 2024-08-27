@@ -1,6 +1,4 @@
 import Link from 'next/link';
-
-import BasicButton from '@/components/BasicButton';
 import OauthButton from '@/app/(guest)/_components/OauthButton';
 
 export default function Home() {
@@ -20,8 +18,12 @@ export default function Home() {
           </h1>
         </div>
       </div>
-      <div className={'flex flex-col justify-center flex-1 p-5 md:p-10'}>
-        <div className={'flex flex-col md:w-2/3 md:p-8'}>
+      <div
+        className={
+          'flex flex-col justify-center flex-1 p-5 mb-14 md:p-10 md:mb-0'
+        }
+      >
+        <div className={'flex flex-col md:w-full md:p-8'}>
           <h3 className={'text-4xl font-bold my-10 md:text-6xl'}>
             개발의 현재를 보다
           </h3>
@@ -67,9 +69,10 @@ export default function Home() {
           </div>
           <div className={'md:w-78 mt-16'}>
             <p className={'font-bold text-lg mb-3'}>이미 계정이 있으신가요?</p>
-            <BasicButton
-              classNames={
-                'bg-transparent border border-solid border-light-gray-dark dark:border-dark-gray-light p-2'
+            <Link
+              href={'/auth/signin'}
+              className={
+                'flex items-center justify-center bg-transparent text-white border border-solid border-light-gray-dark dark:border-dark-gray-light p-3 rounded-full w-full '
               }
             >
               <span
@@ -79,7 +82,7 @@ export default function Home() {
               >
                 로그인
               </span>
-            </BasicButton>
+            </Link>
           </div>
         </div>
       </div>

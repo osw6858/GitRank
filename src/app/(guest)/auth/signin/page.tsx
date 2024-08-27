@@ -1,9 +1,11 @@
-import SignInModal from '@/app/(guest)/_components/SignInModal';
+import AuthModal from '@/app/(guest)/_components/AuthModal';
 
 export default function SignInPage() {
   return (
-    <div>
-      <SignInModal />
-    </div>
+    <>
+      <AuthModal title={'Git Rank 가입하기'}>
+        <div></div>
+      </AuthModal>
+    </>
   );
 }

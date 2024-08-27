@@ -1,9 +1,12 @@
-import SignUpModal from '@/app/(guest)/_components/SignUpModal';
+import AuthModal from '@/app/(guest)/_components/AuthModal';
+import SignUpFrom from '@/app/(guest)/_components/SignUpForm';
 
 export default function SignUpPageInterceptor() {
   return (
-    <div>
-      <SignUpModal />
-    </div>
+    <>
+      <AuthModal title={'계정을 생성하세요'}>
+        <SignUpFrom />
+      </AuthModal>
+    </>
   );
 }
