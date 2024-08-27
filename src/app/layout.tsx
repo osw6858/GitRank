@@ -3,7 +3,7 @@ import './globals.css';
 import {Noto_Sans_KR} from 'next/font/google';
 import {ReactNode} from 'react';
 
-import ThemeSwitcher from '@/components/DarkModeButton';
+import ThemeSwitcher from '@/app/(guest)/_components/DarkModeButton';
 import AuthProvider from '@/provider/AuthProvider';
 import {ThemeProvider} from '@/provider/ThemeProvider';
 
