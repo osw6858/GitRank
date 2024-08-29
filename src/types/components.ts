@@ -13,6 +13,11 @@ export interface SignUpFromValue {
   passwordCheck: string;
 }
 
+export interface SignInFormValue {
+  email: string;
+  password: string;
+}
+
 export interface AuthInputProps<T extends FieldValues> {
   label: Path<T>;
   placeholder: string;
@@ -29,6 +34,5 @@ export interface AuthInputProps<T extends FieldValues> {
 }
 
 export interface ModalProps {
-  title: string;
   children: ReactNode;
 }

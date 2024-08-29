@@ -4,7 +4,7 @@ import SignUpFrom from '@/app/(guest)/_components/SignUpForm';
 export default function SignUpPageInterceptor() {
   return (
     <>
-      <AuthModal title={'계정을 생성하세요'}>
+      <AuthModal>
         <SignUpFrom />
       </AuthModal>
     </>
