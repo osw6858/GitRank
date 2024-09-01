@@ -15,6 +15,7 @@ export default function AuthInput<T extends FieldValues>({
   required,
   rules,
   error,
+  disable = false,
 }: AuthInputProps<T>) {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -24,15 +25,25 @@ export default function AuthInput<T extends FieldValues>({
   });
 
   const getLabelClass = () => {
-    if (error) return 'top-1 left-3 text-xs text-red-500';
-    if (isFocused) return 'top-1 left-3 text-xs text-button-green';
-    if (value) return 'top-1 left-3 text-xs text-dark-gray-light';
+    if (error) {
+      return 'top-1 left-3 text-xs text-red-500';
+    }
+    if (isFocused) {
+      return 'top-1 left-3 text-xs text-button-green';
+    }
+    if (value) {
+      return 'top-1 left-3 text-xs text-dark-gray-light';
+    }
     return 'top-3 left-3 text-base text-dark-gray-light';
   };
 
   const getBorderClass = () => {
-    if (error) return 'shadow-[0_0_0_2px_#EF4444]';
-    if (isFocused) return 'shadow-[0_0_0_2px_#298E46]';
+    if (error) {
+      return 'shadow-[0_0_0_2px_#EF4444]';
+    }
+    if (isFocused) {
+      return 'shadow-[0_0_0_2px_#298E46]';
+    }
     return 'shadow-[0_0_0_1px_rgba(209,213,219,1)] dark:shadow-[0_0_0_1px_rgba(75,85,99,1)]';
   };
 
@@ -64,6 +75,7 @@ export default function AuthInput<T extends FieldValues>({
           spellCheck={true}
           maxLength={50}
           dir="auto"
+          disabled={disable}
         />
         <div
           className={`
@@ -73,7 +85,7 @@ export default function AuthInput<T extends FieldValues>({
           `}
         ></div>
       </div>
-      {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
+      {error && <p className="absolute mt-1 text-xs text-red-500">{error}</p>}
     </div>
   );
 }

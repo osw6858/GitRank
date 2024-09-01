@@ -1,3 +1,4 @@
+import {ReactNode} from 'react';
 import {
   Control,
   FieldValues,
@@ -5,7 +6,6 @@ import {
   RegisterOptions,
   UseFormRegister,
 } from 'react-hook-form';
-import {ReactNode} from 'react';
 
 export interface SignUpFromValue {
   email: string;
@@ -26,6 +26,7 @@ export interface AuthInputProps<T extends FieldValues> {
   register: UseFormRegister<T>;
   control: Control<T>;
   required: boolean;
+  disable?: boolean;
   rules?: Omit<
     RegisterOptions<T>,
     'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'disabled'

@@ -1,14 +1,10 @@
+import {SubmitHandler, useForm} from 'react-hook-form';
 import AuthInput from '@/app/(guest)/_components/AuthInput';
 import BasicButton from '@/components/BasicButton';
-import {SubmitHandler, useForm} from 'react-hook-form';
+import {useEmailStore} from '@/stores/useAuthStore';
 import {SignInFormValue} from '@/types';
-import {Dispatch, SetStateAction} from 'react';
 
-export default function CheckEmail({
-  checkEmail,
-}: {
-  checkEmail: Dispatch<SetStateAction<boolean>>;
-}) {
+export default function CheckEmail() {
   const {
     register,
     handleSubmit,
@@ -16,16 +12,18 @@ export default function CheckEmail({
     formState: {errors},
   } = useForm<SignInFormValue>();
 
-  const onSubmit: SubmitHandler<SignInFormValue> = (data) => {
-    console.log(data);
+  const {setEmail, setCheckedEmail} = useEmailStore();
 
+  const onEmailCheck: SubmitHandler<SignInFormValue> = (data) => {
+    console.log(data);
+    setEmail(data.email);
     // 이곳에서 데이터 패칭
 
-    checkEmail(true);
+    setCheckedEmail(true);
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={'flex flex-col'}>
+    <form onSubmit={handleSubmit(onEmailCheck)} className={'flex flex-col'}>
       <div className={'flex-1'}>
         <AuthInput
           label={'email'}

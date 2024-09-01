@@ -15,7 +15,7 @@ export default function SignUpFrom() {
     formState: {errors},
   } = useForm<SignUpFromValue>();
 
-  const onSubmit: SubmitHandler<SignUpFromValue> = (data) => {
+  const onSignUp: SubmitHandler<SignUpFromValue> = (data) => {
     console.log(data);
   };
 
@@ -23,14 +23,15 @@ export default function SignUpFrom() {
 
   return (
     <>
-      <h1 className={'text-3xl font-semibold'}>계정을 생성하세요</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className={'flex flex-col mt-7'}>
-        <div className={'flex-1'}>
+      <h1 className="text-3xl font-semibold mb-7">계정을 생성하세요</h1>
+
+      <form onSubmit={handleSubmit(onSignUp)} className="flex flex-col flex-1">
+        <div className="flex-grow mb-5">
           <AuthInput
-            label={'email'}
-            placeholder={'이메일'}
-            type={'email'}
-            autoComplete={'email'}
+            label="email"
+            placeholder="이메일"
+            type="email"
+            autoComplete="email"
             register={register}
             control={control}
             required
@@ -44,9 +45,9 @@ export default function SignUpFrom() {
             error={errors.email?.message}
           />
           <AuthInput
-            label={'password'}
-            placeholder={'비밀번호'}
-            type={'password'}
+            label="password"
+            placeholder="비밀번호"
+            type="password"
             register={register}
             control={control}
             required
@@ -60,9 +61,9 @@ export default function SignUpFrom() {
             error={errors.password?.message}
           />
           <AuthInput
-            label={'passwordCheck'}
-            placeholder={'비밀번호 확인'}
-            type={'password'}
+            label="passwordCheck"
+            placeholder="비밀번호 확인"
+            type="password"
             register={register}
             control={control}
             required
@@ -74,17 +75,12 @@ export default function SignUpFrom() {
             error={errors.passwordCheck?.message}
           />
         </div>
+
         <BasicButton
-          type={'submit'}
-          classNames={
-            'mt-6 p-3 bg-black dark:bg-white dark:border-dark-gray-light p-2 transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100'
-          }
+          type="submit"
+          classNames="mt-auto p-3 bg-black dark:bg-white dark:border-dark-gray-light transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100"
         >
-          <span
-            className={
-              'text-white text-lg dark:text-black font-semibold transition-colors duration-200 group-hover:text-gray-200 dark:group-hover:text-gray-800'
-            }
-          >
+          <span className="text-white text-lg dark:text-black font-semibold transition-colors duration-200 group-hover:text-gray-200 dark:group-hover:text-gray-800">
             가입
           </span>
         </BasicButton>

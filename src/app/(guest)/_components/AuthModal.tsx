@@ -2,18 +2,23 @@
 
 import {useRouter} from 'next/navigation';
 import {ModalProps} from '@/types';
+import {useEmailStore} from '@/stores/useAuthStore';
 
 export default function AuthModal({children}: ModalProps) {
   const router = useRouter();
+  const {setCheckedEmail} = useEmailStore();
 
   return (
     <div className="fixed inset-0 bg-dark-modalBg flex items-center justify-center z-50">
-      <div className="w-full h-full bg-white dark:bg-dark-background rounded-2xl shadow-xl p-3 md:w-[600px] md:h-auto">
+      <div className="w-full h-full bg-white dark:bg-dark-background rounded-2xl shadow-xl p-3 md:w-[600px] md:h-[650px]">
         <div className={'flex flex-col'}>
           <div className={'flex items-center relative'}>
             <button
               className={'absolute top-3 left-3 rounded-full p-3'}
-              onClick={() => router.back()}
+              onClick={() => {
+                router.back();
+                setCheckedEmail(false);
+              }}
             >
               ✕
             </button>
@@ -30,7 +35,9 @@ export default function AuthModal({children}: ModalProps) {
               </div>
             </div>
           </div>
-          <div className={'px-6 md:px-20 py-7'}>{children}</div>
+          <div className="flex flex-col md:h-[550px] px-6 md:px-20 py-7">
+            {children}
+          </div>
         </div>
       </div>
     </div>
