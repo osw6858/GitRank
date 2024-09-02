@@ -1,8 +1,9 @@
-import {useEmailStore} from '@/stores/useAuthStore';
-import AuthInput from '@/app/(guest)/_components/AuthInput';
 import {SubmitHandler, useForm} from 'react-hook-form';
-import {SignInFormValue} from '@/types';
+
+import AuthInput from '@/app/(guest)/_components/AuthInput';
 import BasicButton from '@/components/BasicButton';
+import {useEmailStore} from '@/stores/useAuthStore';
+import {SignInFormValue} from '@/types';
 
 export default function CheckPassword() {
   const {email} = useEmailStore();

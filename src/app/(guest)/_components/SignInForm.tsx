@@ -1,10 +1,10 @@
 'use client';
 
-import OauthButton from '@/app/(guest)/_components/OauthButton';
 import Link from 'next/link';
 
 import CheckEmail from '@/app/(guest)/_components/CheckEmail';
 import CheckPassword from '@/app/(guest)/_components/CheckPassword';
+import OauthButton from '@/app/(guest)/_components/OauthButton';
 import {useEmailStore} from '@/stores/useAuthStore';
 
 export default function SignInForm() {
@@ -13,7 +13,12 @@ export default function SignInForm() {
   return (
     <>
       {checkedEmail ? (
-        <CheckPassword />
+        <div>
+          <h1 className={'text-3xl font-semibold mb-3'}>
+            비밀번호를 입력하세요
+          </h1>
+          <CheckPassword />
+        </div>
       ) : (
         <div className={'md:px-10 pb-20'}>
           <h1 className={'text-3xl font-semibold'}>Git Rank 가입하기</h1>
