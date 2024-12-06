@@ -1,5 +1,7 @@
 import Link from 'next/link';
+
 import OauthButton from '@/app/(guest)/_components/OauthButton';
+import Button from '@/components/Button';
 
 export default function Home() {
   return (
@@ -51,14 +53,11 @@ export default function Home() {
             </div>
           </div>
           <div className={'md:w-78 mb-5 group relative'}>
-            <Link
-              href={'/auth/signup'}
-              className={
-                'flex items-center justify-center bg-button-green text-white p-3 rounded-full w-full '
-              }
-            >
-              <span className={'py-[2px]'}>비연동 회원가입</span>
-            </Link>
+            <Button asChild variant={'default'}>
+              <Link href={'/auth/signup'}>
+                <span className={'font-semibold pr-2'}>비연동 회원가입</span>
+              </Link>
+            </Button>
             <div className="tooltip">
               깃허브 연동을 하지 않고 회원가입만 진행합니다.
               <br />

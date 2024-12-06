@@ -3,8 +3,8 @@
 import {SubmitHandler, useForm} from 'react-hook-form';
 
 import AuthInput from '@/app/(guest)/_components/AuthInput';
+import Button from '@/components/Button';
 import {SignUpFromValue} from '@/types';
-import BasicButton from '@/components/BasicButton';
 
 export default function SignUpFrom() {
   const {
@@ -76,14 +76,14 @@ export default function SignUpFrom() {
           />
         </div>
 
-        <BasicButton
+        <Button
           type="submit"
-          classNames="mt-auto p-3 bg-black dark:bg-white dark:border-dark-gray-light transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100"
+          className="mt-auto p-3 bg-black dark:bg-white dark:border-dark-gray-light transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100"
         >
           <span className="text-white text-lg dark:text-black font-semibold transition-colors duration-200 group-hover:text-gray-200 dark:group-hover:text-gray-800">
             가입
           </span>
-        </BasicButton>
+        </Button>
       </form>
     </>
   );
