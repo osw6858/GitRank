@@ -16,6 +16,7 @@ export default function AuthInput<T extends FieldValues>({
   rules,
   error,
   disable = false,
+  ...htmlProps
 }: AuthInputProps<T>) {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -61,6 +62,7 @@ export default function AuthInput<T extends FieldValues>({
         </span>
         <input
           {...register(label, {required, ...rules})}
+          {...htmlProps}
           type={type}
           autoComplete={autoComplete}
           className={`

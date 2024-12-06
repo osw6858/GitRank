@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {InputHTMLAttributes, ReactNode} from 'react';
 import {
   Control,
   FieldValues,
@@ -7,25 +7,22 @@ import {
   UseFormRegister,
 } from 'react-hook-form';
 
-export interface SignUpFromValue {
+export interface BaseAuthFormValue {
   email: string;
   password: string;
+}
+
+export type SignInFormValue = BaseAuthFormValue;
+
+export interface SignUpFromValue extends BaseAuthFormValue {
   passwordCheck: string;
 }
 
-export interface SignInFormValue {
-  email: string;
-  password: string;
-}
-
-export interface AuthInputProps<T extends FieldValues> {
+export interface AuthInputProps<T extends FieldValues>
+  extends InputHTMLAttributes<HTMLInputElement> {
   label: Path<T>;
-  placeholder: string;
-  type: 'text' | 'password' | 'email';
-  autoComplete?: 'email' | 'name';
   register: UseFormRegister<T>;
   control: Control<T>;
-  required: boolean;
   disable?: boolean;
   rules?: Omit<
     RegisterOptions<T>,
