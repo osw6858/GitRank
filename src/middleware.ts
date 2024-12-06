@@ -1,31 +1,17 @@
-import {NextResponse} from 'next/server';
-import {withAuth} from 'next-auth/middleware';
+import {auth} from '@/auth';
 
-export default withAuth(
-  function middleware(req) {
-    const {pathname} = req.nextUrl;
-    const isAuthenticated = !!req.nextauth.token;
+export default auth((req) => {
+  if (!req.auth && req.nextUrl.pathname !== '/') {
+    const newUrl = new URL('/', req.nextUrl.origin);
+    return Response.redirect(newUrl);
+  }
 
-    if (pathname === '/' && isAuthenticated) {
-      return NextResponse.redirect(new URL('/success', req.url));
-    }
-
-    if (pathname !== '/' && !isAuthenticated) {
-      return NextResponse.redirect(new URL('/', req.url));
-    }
-
-    return NextResponse.next();
-  },
-  {
-    callbacks: {
-      authorized: ({token, req}) => {
-        const {pathname} = req.nextUrl;
-        return pathname === '/' || !!token;
-      },
-    },
-  },
-);
+  if (req.auth && req.nextUrl.pathname === '/') {
+    const newUrl = new URL('/success', req.nextUrl.origin);
+    return Response.redirect(newUrl);
+  }
+});
 
 export const config = {
-  matcher: ['/', '/success', '/profile'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };
