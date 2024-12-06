@@ -1,4 +1,5 @@
-import {InputHTMLAttributes, ReactNode} from 'react';
+import {VariantProps} from 'class-variance-authority';
+import {ButtonHTMLAttributes, InputHTMLAttributes, ReactNode} from 'react';
 import {
   Control,
   FieldValues,
@@ -6,6 +7,8 @@ import {
   RegisterOptions,
   UseFormRegister,
 } from 'react-hook-form';
+
+import {ButtonVariant} from '@/components/Button';
 
 export interface BaseAuthFormValue {
   email: string;
@@ -29,6 +32,13 @@ export interface AuthInputProps<T extends FieldValues>
     'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'disabled'
   >;
   error?: string;
+}
+
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof ButtonVariant> {
+  children: string | ReactNode;
+  asChild?: boolean;
 }
 
 export interface ModalProps {
