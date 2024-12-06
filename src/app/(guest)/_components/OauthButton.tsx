@@ -6,7 +6,7 @@ export default function OauthButton() {
   return (
     <div className={'group relative'}>
       <button
-        onClick={() => signIn('github', {callbackUrl: '/success'})}
+        onClick={() => signIn('github', {redirectTo: '/success'})}
         className={
           'bg-dark-background text-dark-text dark:bg-light-background dark:text-light-text w-full p-3 rounded-full'
         }
