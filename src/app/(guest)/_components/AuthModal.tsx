@@ -1,8 +1,9 @@
 'use client';
 
 import {useRouter} from 'next/navigation';
-import {ModalProps} from '@/types';
+
 import {useEmailStore} from '@/stores/useAuthStore';
+import {ModalProps} from '@/types';
 
 export default function AuthModal({children}: ModalProps) {
   const router = useRouter();

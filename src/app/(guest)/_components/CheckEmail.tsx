@@ -1,6 +1,7 @@
 import {SubmitHandler, useForm} from 'react-hook-form';
+
 import AuthInput from '@/app/(guest)/_components/AuthInput';
-import BasicButton from '@/components/BasicButton';
+import Button from '@/components/Button';
 import {useEmailStore} from '@/stores/useAuthStore';
 import {SignInFormValue} from '@/types';
 
@@ -43,9 +44,9 @@ export default function CheckEmail() {
           error={errors.email?.message}
         />
       </div>
-      <BasicButton
+      <Button
         type={'submit'}
-        classNames={
+        className={
           'mt-6 bg-black dark:bg-white dark:border-dark-gray-light p-2 transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100'
         }
       >
@@ -56,10 +57,10 @@ export default function CheckEmail() {
         >
           다음
         </span>
-      </BasicButton>
-      <BasicButton
+      </Button>
+      <Button
         type={'submit'}
-        classNames={
+        className={
           'mt-6 bg-transparent border border-soild dark:border-dark-gray-light p-[5px]'
         }
       >
@@ -70,7 +71,7 @@ export default function CheckEmail() {
         >
           비밀번호를 잊으셨나요?
         </p>
-      </BasicButton>
+      </Button>
     </form>
   );
 }

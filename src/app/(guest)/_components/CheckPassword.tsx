@@ -1,7 +1,7 @@
 import {SubmitHandler, useForm} from 'react-hook-form';
 
 import AuthInput from '@/app/(guest)/_components/AuthInput';
-import BasicButton from '@/components/BasicButton';
+import Button from '@/components/Button';
 import {useEmailStore} from '@/stores/useAuthStore';
 import {SignInFormValue} from '@/types';
 
@@ -48,9 +48,9 @@ export default function CheckPassword() {
           error={errors.password?.message}
         />
       </div>
-      <BasicButton
+      <Button
         type={'submit'}
-        classNames={
+        className={
           'mt-6 bg-black dark:bg-white dark:border-dark-gray-light p-3 transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100'
         }
       >
@@ -61,7 +61,7 @@ export default function CheckPassword() {
         >
           로그인
         </span>
-      </BasicButton>
+      </Button>
     </form>
   );
 }
