@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {FieldValues, useWatch} from 'react-hook-form';
 
 import {AuthInputProps} from '@/types';
+import {cn} from '@/util/style';
 
 export default function AuthInput<T extends FieldValues>({
   label,
@@ -15,6 +16,7 @@ export default function AuthInput<T extends FieldValues>({
   required,
   rules,
   error,
+  className,
   disable = false,
   ...htmlProps
 }: AuthInputProps<T>) {
@@ -65,13 +67,16 @@ export default function AuthInput<T extends FieldValues>({
           {...htmlProps}
           type={type}
           autoComplete={autoComplete}
-          className={`
+          className={cn(
+            `
             w-full bg-transparent
             pt-5 pb-2 px-3 rounded-md
             focus:outline-none
             relative z-10
             ${error ? 'border-red-500' : ''}
-          `}
+          `,
+            className,
+          )}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           spellCheck={true}
