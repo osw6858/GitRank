@@ -2,6 +2,7 @@ import {SubmitHandler, useForm} from 'react-hook-form';
 
 import AuthInput from '@/app/(guest)/_components/AuthInput';
 import Button from '@/components/Button';
+import {RULES} from '@/constant';
 import {useEmailStore} from '@/stores/useAuthStore';
 import {SignInFormValue} from '@/types';
 
@@ -32,19 +33,13 @@ export default function CheckPassword() {
           disable
         />
         <AuthInput
-          label={'password'}
-          placeholder={'비밀번호'}
-          type={'password'}
+          label="password"
+          placeholder="비밀번호"
+          type="password"
           register={register}
           control={control}
           required
-          rules={{
-            required: '비밀번호는 필수입니다.',
-            minLength: {
-              value: 8,
-              message: '비밀번호는 최소 8자 이상이어야 합니다.',
-            },
-          }}
+          rules={RULES.password}
           error={errors.password?.message}
         />
       </div>

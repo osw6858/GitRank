@@ -1,10 +1,10 @@
-import {MESSAGES} from '@/constant/index';
+import {MESSAGES, REGEX} from '@/constant';
 
 export const RULES = {
   email: {
     required: MESSAGES.auth.requiredEmail,
     pattern: {
-      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      value: REGEX.auth.email,
       message: MESSAGES.auth.emailError,
     },
   },
@@ -12,12 +12,20 @@ export const RULES = {
   password: {
     required: MESSAGES.auth.requiredPassword,
     pattern: {
-      value: /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).+$/,
+      value: REGEX.auth.password,
       message: MESSAGES.auth.passwordError,
     },
     minLength: {
       value: 8,
       message: MESSAGES.auth.passwordLengthError,
     },
+  },
+
+  passwordCheck: (password: string) => {
+    return {
+      required: MESSAGES.auth.requiredPasswordCheck,
+      validate: (value: string) =>
+        value === password || MESSAGES.auth.passwordCheckError,
+    };
   },
 };

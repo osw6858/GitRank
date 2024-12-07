@@ -5,5 +5,7 @@ export const MESSAGES = {
     requiredPassword: '비밀번호는 필수입니다.',
     passwordError: '비밀번호는 영문, 숫자, 특수문자를 포함해야 합니다.',
     passwordLengthError: '비밀번호는 최소 8자 이상이어야 합니다.',
+    requiredPasswordCheck: '비밀번호 확인은 필수입니다.',
+    passwordCheckError: '비밀번호가 일치하지 않습니다.',
   },
 };

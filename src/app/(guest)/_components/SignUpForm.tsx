@@ -4,6 +4,7 @@ import {SubmitHandler, useForm} from 'react-hook-form';
 
 import AuthInput from '@/app/(guest)/_components/AuthInput';
 import Button from '@/components/Button';
+import {RULES} from '@/constant';
 import {SignUpFromValue} from '@/types';
 
 export default function SignUpFrom() {
@@ -35,13 +36,7 @@ export default function SignUpFrom() {
             register={register}
             control={control}
             required
-            rules={{
-              required: '이메일은 필수입니다.',
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: '올바른 이메일 형식이 아닙니다.',
-              },
-            }}
+            rules={RULES.email}
             error={errors.email?.message}
           />
           <AuthInput
@@ -51,13 +46,7 @@ export default function SignUpFrom() {
             register={register}
             control={control}
             required
-            rules={{
-              required: '비밀번호는 필수입니다.',
-              minLength: {
-                value: 8,
-                message: '비밀번호는 최소 8자 이상이어야 합니다.',
-              },
-            }}
+            rules={RULES.password}
             error={errors.password?.message}
           />
           <AuthInput
@@ -67,11 +56,7 @@ export default function SignUpFrom() {
             register={register}
             control={control}
             required
-            rules={{
-              required: '비밀번호 확인은 필수입니다.',
-              validate: (value) =>
-                value === password || '비밀번호가 일치하지 않습니다.',
-            }}
+            rules={RULES.passwordCheck(password)}
             error={errors.passwordCheck?.message}
           />
         </div>

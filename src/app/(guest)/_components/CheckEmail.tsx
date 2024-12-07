@@ -2,6 +2,7 @@ import {SubmitHandler, useForm} from 'react-hook-form';
 
 import AuthInput from '@/app/(guest)/_components/AuthInput';
 import Button from '@/components/Button';
+import {RULES} from '@/constant';
 import {useEmailStore} from '@/stores/useAuthStore';
 import {SignInFormValue} from '@/types';
 
@@ -27,20 +28,14 @@ export default function CheckEmail() {
     <form onSubmit={handleSubmit(onEmailCheck)} className={'flex flex-col'}>
       <div className={'flex-1'}>
         <AuthInput
-          label={'email'}
-          placeholder={'이메일'}
-          type={'email'}
-          autoComplete={'email'}
+          label="email"
+          placeholder="이메일"
+          type="email"
+          autoComplete="email"
           register={register}
           control={control}
           required
-          rules={{
-            required: '이메일은 필수입니다.',
-            pattern: {
-              value: /\S+@\S+\.\S+/,
-              message: '올바른 이메일 형식이 아닙니다.',
-            },
-          }}
+          rules={RULES.email}
           error={errors.email?.message}
         />
       </div>
