@@ -53,7 +53,7 @@ export default function Home() {
             </div>
           </div>
           <div className={'md:w-78 mb-5 group relative'}>
-            <Button asChild variant={'default'}>
+            <Button asChild variant={'secondary'}>
               <Link href={'/auth/signup'}>
                 <span className={'font-semibold pr-2'}>비연동 회원가입</span>
               </Link>

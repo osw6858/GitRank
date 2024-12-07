@@ -48,19 +48,8 @@ export default function CheckPassword() {
           error={errors.password?.message}
         />
       </div>
-      <Button
-        type={'submit'}
-        className={
-          'mt-6 bg-black dark:bg-white dark:border-dark-gray-light p-3 transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100'
-        }
-      >
-        <span
-          className={
-            'text-white text-base dark:text-black font-semibold transition-colors duration-200 group-hover:text-gray-200 dark:group-hover:text-gray-800'
-          }
-        >
-          로그인
-        </span>
+      <Button type={'submit'}>
+        <span>로그인</span>
       </Button>
     </form>
   );

@@ -76,13 +76,8 @@ export default function SignUpFrom() {
           />
         </div>
 
-        <Button
-          type="submit"
-          className="mt-auto p-3 bg-black dark:bg-white dark:border-dark-gray-light transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100"
-        >
-          <span className="text-white text-lg dark:text-black font-semibold transition-colors duration-200 group-hover:text-gray-200 dark:group-hover:text-gray-800">
-            가입
-          </span>
+        <Button type="submit">
+          <span className="text-lg font-semibold">가입</span>
         </Button>
       </form>
     </>

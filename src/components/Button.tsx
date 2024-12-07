@@ -14,9 +14,9 @@ export const ButtonVariant = cva(
       variant: {
         default:
           'bg-dark-background text-dark-text dark:bg-light-background dark:text-light-text',
-        secondary: ' bg-button-green text-white',
+        secondary: 'bg-button-green text-white',
         ghost:
-          'bg-transparent text-white border border-solid border-light-gray-dark dark:border-dark-gray-light',
+          'bg-transparent text-black border border-solid border-light-gray-dark dark:border-dark-gray-light dark:text-dark-text',
       },
       size: {
         default: 'p-3',

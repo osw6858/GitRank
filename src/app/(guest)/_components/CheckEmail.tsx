@@ -44,34 +44,14 @@ export default function CheckEmail() {
           error={errors.email?.message}
         />
       </div>
-      <Button
-        type={'submit'}
-        className={
-          'mt-6 bg-black dark:bg-white dark:border-dark-gray-light p-2 transition-colors duration-200 hover:bg-gray-800 dark:hover:bg-gray-100'
-        }
-      >
-        <span
-          className={
-            'text-white text-base dark:text-black font-semibold transition-colors duration-200 group-hover:text-gray-200 dark:group-hover:text-gray-800'
-          }
-        >
-          다음
-        </span>
-      </Button>
-      <Button
-        type={'submit'}
-        className={
-          'mt-6 bg-transparent border border-soild dark:border-dark-gray-light p-[5px]'
-        }
-      >
-        <p
-          className={
-            'pb-[1.2px] text-black text-base dark:text-white font-semibold transition-colors duration-200 group-hover:text-gray-200 dark:group-hover:text-gray-800'
-          }
-        >
-          비밀번호를 잊으셨나요?
-        </p>
-      </Button>
+      <div className={'flex flex-col space-y-6 mt-3'}>
+        <Button type={'submit'} variant={'default'}>
+          <span className={'font-semibold'}>다음</span>
+        </Button>
+        <Button type={'submit'} variant={'ghost'}>
+          <span className={'font-semibold'}>비밀번호를 잊으셨나요?</span>
+        </Button>
+      </div>
     </form>
   );
 }
